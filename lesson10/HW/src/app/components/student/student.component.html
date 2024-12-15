@@ -1,0 +1,59 @@
+<ng-template #template>
+  <p>-------------------רשימת התלמידות --------------------</p>
+</ng-template>
+<!-- 
+<p>choose a color</p>
+<input type="radio" name="colors" (click)="colorSelect='red'">red
+<input type="radio" name="colors" (click)="colorSelect='yellow'">yellow
+<input type="radio" name="colors" (click)="colorSelect='green'">green
+<br>
+
+<ng-container *ngTemplateOutlet="template" ></ng-container>
+
+@for(stud of AllStudent; track stud.id){
+  <div CustomDirectiveLs7 [colorDirective]="colorSelect" >{{stud.name}} </div>
+  id: {{stud.id}} age: {{stud.age}} address: {{stud.address}} isActive: {{stud.isActive}}
+
+  <button (click)="deleteClick(stud)">למחיקה {{stud.name}}</button>
+  @if( selectedForDelete==stud.id){
+  <app-information-card (studentInformation)="deleteStudent($event)">
+   <div ngProjectAs="content-body">
+      Are you sure that yow want to delete the student ?
+   </div>
+    <button ngProjectAs="content-footer" (click)="deleteStudent(true)">yes</button>
+    <button ngProjectAs="content-footer" (click)="deleteStudent(false)">no</button>
+  </app-information-card>
+  }
+
+  <button (click)="EditClick(stud.id)"> לעריכה {{stud.name}}</button>
+  <br>
+  @if (selected==stud.id ){
+    <p>Edit</p>
+    @if(stud.isActive){
+    <app-student-details (SaveMe)="SaveStudent($event)"></app-student-details>
+    }
+    @else{
+      <p>{{stud.leavingDate}}</p>
+    }
+  }
+  @if(stud.isPayed){
+    <app-scrolling-list-courses></app-scrolling-list-courses>
+  }
+  @else {
+    <p>התלמיד לא שילם</p>
+  }
+  <p>------------</p>
+}
+
+<ng-container *ngTemplateOutlet="template" ></ng-container>
+
+<br>
+<button (click)="AddClick()">add student</button>
+
+@if(selected==-1){
+<app-student-details (SaveMe)="SaveStudent($event)"></app-student-details>
+}  -->
+<app-text-icon/>
+<hr>
+<app-list-taechers></app-list-taechers>
+

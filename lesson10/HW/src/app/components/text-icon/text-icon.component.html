@@ -1,0 +1,15 @@
+<p>text-icon works!</p>
+
+<div>
+    <p>choose how do you fill today? </p>
+    <select [(ngModel)]="iconText">
+        <option value="happy"  name="feel" id="2">happy</option>
+        <option value="sad"   name="feel"  id="3">sad</option>
+        <option value="excited"   name="feel" id="4">excited</option>
+        <option value="tired" name="feel" id="5">tired</option>
+        <option value="want to sleep" name="feel" id="6">want to sleep</option>
+        <option value="Love" name="feel" id="7">Love</option>
+        <option value="angry" name="feel" id="8">angry</option>
+    </select>
+    <div>{{ iconText | textToIcon}}</div>
+</div>

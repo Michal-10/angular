@@ -1,0 +1,61 @@
+@if(isEdit){
+<form #form="ngForm" (ngSubmit)="onSubmit()" action="">
+
+    <label for="nameTacher">name: </label>
+    <input #name="ngModel" type="text" [(ngModel)]="new_teacher.name" name="nameTacher" id="nameTacher" minlength="4"
+        required>
+
+
+    @if(name.hasError('minlength')){
+    <small class="error-invalid">name is too short </small>
+    }
+
+    @if(!name.touched && name.hasError('required')){
+    <small class="error-invalid">name is required.</small>
+    }
+    <br>
+    <label for="classesTacher">classes: </label>
+    <input #classes="ngModel" type="text" [(ngModel)]="new_teacher.classes" name="classesTacher" id="classesTacher"
+        minlength="1" required>
+    @if( classes.hasError('required')){
+    <small class="error-invalid">required </small>
+    }
+    @if( classes.hasError('minlength')){
+    <small class="error-invalid">must be at least 1 class </small>
+    }
+    <br>
+    <button [disabled]="form.invalid" type="submit">Submit</button>
+</form>
+}
+
+<br>
+
+@if(isAdd){
+<form #form="ngForm" (ngSubmit)="onSubmit()" action="">
+
+    <label for="nameTacher">name: </label>
+    <input #name="ngModel" type="text" [(ngModel)]="new_teacher.name" name="nameTacher" id="nameTacher" minlength="3"
+        required>
+
+    @if(!name.touched || name.hasError('required')){
+    <small class="error-invalid">name is required.</small>
+    }
+
+    @if(name.hasError('minlength')){
+    <small class="error-invalid">name is too short </small>
+    }
+    <br>
+    <label for="classesTacher">classes: </label>
+    <input #classes="ngModel" type="text" [(ngModel)]="new_teacher.classes" name="classesTacher" id="classesTacher"
+        minlength="1" required>
+    @if( classes.hasError('minlength')){
+    <small class="error-invalid">must be at least 1 class </small>
+    }
+    @if( classes.hasError('required')){
+    <small class="error-invalid">required </small>
+    }
+
+    <br>
+    <button [disabled]="form.invalid" type="submit">Submit</button>
+</form>
+}

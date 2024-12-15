@@ -1,0 +1,15 @@
+<p>scrolling-list-courses works!</p>
+
+<!-- @for(c of listCourses ;track c.IdCourse){
+   <input type="checkbox"> IdCourse: {{c.IdCourse}} , name: {{c.NameCourse}}, subject: {{ c.subjectCourse}}
+    <br>  
+} -->
+    
+<select >
+    <option disabled selected >choose</option>
+  @for (course of listCourses; track course.IdCourse) {
+    <option>
+     course name:{{course.NameCourse}} subject:{{course.subjectCourse}} 
+    </option>
+    }
+  </select>
