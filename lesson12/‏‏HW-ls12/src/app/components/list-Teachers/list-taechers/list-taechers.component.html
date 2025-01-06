@@ -1,0 +1,20 @@
+<p>list-taechers works!</p>
+
+@for (s of this.arrTeachers; track $index) {
+    <p [ngClass]="{'TeacherWithoutClasses':!s.classes[0]}">id: {{s.id}} , name: {{s.name}} , classes - {{s.classes}}</p>   
+    
+    <button (click)="onUpdate(s)">to Edit</button>
+    @if(new_teacher.id==s.id){
+        <app-lesson9-form (close)="onCloseForm($event)" [isEdit]="true" [new_teacher]="new_teacher"></app-lesson9-form>
+    }
+}
+
+<br>
+<button (click)="onAdd()" >to Add Teacher</button>
+@if(isAdd){
+    <app-lesson9-form (close)="onCloseForm($event)" [isAdd]="true" [new_teacher]="new_teacher"></app-lesson9-form>
+}
+<br>
+<br>
+<br>
+<p>מורה ללא כיתות תצבע בצבע כחול</p>

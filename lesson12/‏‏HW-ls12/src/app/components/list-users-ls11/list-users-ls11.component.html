@@ -1,0 +1,50 @@
+<p>list-users-ls11 works!</p>
+@for (item of arrUsers; track $index) {
+    <div> id: {{item.id}} - name: {{item.name}} - role: {{item.role.toLowerCase()}} - password: {{item.password}} - email: {{item.email}} </div>
+}
+<button (click)="onClick()">Add User</button>
+
+@if(toAddUser) {
+<form (submit)="onSubmit()" [formGroup]="addUserForm">
+    <div class="formGroup">
+        <label for="name">name: </label>
+        <input class="form-control" type="text" name="name" id="name" formControlName="name">
+    </div>
+
+    @if(this.addUserForm.get('name')?.invalid && addUserForm.get('name')?.touched){
+        <small>name is required and at least 3 characters</small>
+    }
+
+    <div class="formGroup">
+
+        <label for="role">role: </label>
+        <br>
+        <input class="form-control" type="radio" name="role" id="MANAGER" value="manager" formControlName="role">MANAGER
+        <input class="form-control" type="radio" name="role" id="student" value="student" formControlName="role">STUDENT
+        <input class="form-control" type="radio" name="role" id="teacher" value="TEACHER" formControlName="role">TEACHER
+        <input class="form-control" type="radio" name="role" id="decretary" value="SECRETARY" formControlName="role">SECRETARY
+    </div>
+
+    @if(this.addUserForm.get('role')?.invalid && addUserForm.get('role')?.touched){
+        <small>role is required</small>
+    }
+
+    <div class="formGroup">
+        <label for="email">email: </label>
+        <input class="form-control" type="email" name="email" id="email" formControlName="email">
+    </div>
+    @if(this.addUserForm.get('email')?.invalid && addUserForm.get('email')?.touched){
+        <small>email is required</small>
+    }
+    <div class="formGroup">
+        <label for="password">password: </label>
+        <input class="form-control" type="text" name="password" id="password" formControlName="password">
+    </div>
+    @if(this.addUserForm.get('password')?.invalid && addUserForm.get('password')?.touched){
+        <small>password is required</small>
+    }
+
+    <button [disabled]="this.addUserForm.invalid" type="submit">submit</button>
+
+</form>
+}

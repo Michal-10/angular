@@ -1,0 +1,16 @@
+<p>student-details works!</p>
+
+<!-- @if(!isNotAdd){
+<div>{{currentStudent.id}}</div>
+<div>{{currentStudent.name}}</div>
+<div>{{currentStudent.age}}</div>
+<div>{{currentStudent.address}}</div>
+<div>{{currentStudent.isActive}}</div>
+}
+@else{ -->
+    id: <input #identity type="number" placeholder="id"  />
+    name: <input #name type="text" placeholder="name"   />
+    age: <input #age type="number" placeholder="age"  />
+    address: <input #addrss type="text" placeholder="address"   />
+    <button (click)="SaveClick(+identity.value ,name.value,+age.value,addrss.value)">Save</button>
+<!-- } -->
